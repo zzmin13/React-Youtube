@@ -1,0 +1,29 @@
+.video {
+  border: 2px solid red;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+  width: 100%;
+  height: 100%;
+}
+.video-thumbnail {
+  background-color: black;
+}
+.video-thumbnail-img {
+  width: 100%;
+  height: 100%;
+}
+.video-thumbnail-img-crop {
+  width: 100%;
+  height: 100%;
+  /* border: 1px solid blue;
+  position: absolute; */
+}
+
+.video-title {
+  overflow-y: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
