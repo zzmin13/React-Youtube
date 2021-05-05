@@ -17,7 +17,7 @@ function App() {
         <Navbar />
         <Navigation />
         <Route path="/" exact={true} component={Home} />
-        <Route path="/video-detail" component={VideoDetail} />
+        <Route path="/video/:id" component={VideoDetail} />
       </HashRouter>
     </>
   );

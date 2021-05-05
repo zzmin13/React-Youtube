@@ -5,11 +5,13 @@ const Videos = (props) => {
   const { videos } = props;
   return (
     <div className="videos-container">
-      {videos.map((video) => {
+      {videos.map((video, index, videos) => {
         if (video.snippet.thumbnails.maxres) {
           return (
             <Video
               key={video.id}
+              id={video.id}
+              videos={videos}
               snippet={video.snippet}
               thumbnails={video.snippet.thumbnails.maxres}
             />
@@ -18,6 +20,8 @@ const Videos = (props) => {
           return (
             <Video
               key={video.id}
+              id={video.id}
+              videos={videos}
               snippet={video.snippet}
               thumbnails={video.snippet.thumbnails.standard}
             />

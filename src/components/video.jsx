@@ -3,18 +3,22 @@ import { Link } from "react-router-dom";
 import "../css/video.css";
 const Video = (props) => {
   const {
+    id,
+    videos,
     snippet: { title, description },
     thumbnails,
   } = props;
   const imgURL = thumbnails.url;
+  console.log(videos);
   return (
     <Link
       to={{
-        pathname: "/video-detail",
+        pathname: `/video/${id}`,
         state: {
           title,
           description,
           thumbnails,
+          videos,
         },
       }}
     >
