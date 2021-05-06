@@ -1,7 +1,7 @@
-import React from "react";
+import React, { memo } from "react";
 import { Link } from "react-router-dom";
-import "../css/video.css";
-const Video = (props) => {
+
+const Video = memo((props) => {
   const {
     id,
     videos,
@@ -9,12 +9,13 @@ const Video = (props) => {
     thumbnails,
   } = props;
   const imgURL = thumbnails.url;
-  console.log(videos);
+  console.log(`video : ${id}`);
   return (
     <Link
       to={{
         pathname: `/video/${id}`,
         state: {
+          id,
           title,
           description,
           thumbnails,
@@ -27,10 +28,9 @@ const Video = (props) => {
           <img src={imgURL} alt={title} className="video-thumbnail-img" />
         </div>
         <h1 className="video-title">{title}</h1>
-        {/* <h2>{description}</h2> */}
       </div>
     </Link>
   );
-};
+});
 
 export default Video;

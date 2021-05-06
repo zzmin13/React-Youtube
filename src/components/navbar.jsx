@@ -1,8 +1,8 @@
-import React from "react";
+import React, { memo } from "react";
 import { Link } from "react-router-dom";
-import "../css/navbar.css";
 
-const Navbar = (props) => {
+const Navbar = memo((props) => {
+  console.log(`navbar`);
   return (
     <div className="navbar">
       <Link to="/">
@@ -17,6 +17,6 @@ const Navbar = (props) => {
       </form>
     </div>
   );
-};
+});
 
 export default Navbar;

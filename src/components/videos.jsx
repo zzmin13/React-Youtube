@@ -1,10 +1,11 @@
-import React from "react";
+import React, { memo } from "react";
 import Video from "./video";
 
-const Videos = (props) => {
+const Videos = memo((props) => {
   const { videos } = props;
+  console.log(`videos`);
   return (
-    <div className="videos-container">
+    <>
       {videos.map((video, index, videos) => {
         if (video.snippet.thumbnails.maxres) {
           return (
@@ -28,8 +29,8 @@ const Videos = (props) => {
           );
         }
       })}
-    </div>
+    </>
   );
-};
+});
 
 export default Videos;
