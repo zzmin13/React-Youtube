@@ -29,7 +29,12 @@ function Home() {
   return (
     <>
       {isLoading ? (
-        <h1>Loading...</h1>
+        <div
+          style={{ width: "100%", height: "1000px", backgroundColor: "blue" }}
+        >
+          <h1>Loading...</h1>
+          <div>완전 큰 박스</div>
+        </div>
       ) : (
         <div className="home-videos-container">
           <Videos videos={videos} />

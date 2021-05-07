@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter, Route } from "react-router-dom";
 import "./app.css";
 import "./css/navbar.css";
+import "./css/navigation.css";
 import "./css/videos.css";
 import "./css/video.css";
 import "./css/videoDetail.css";
@@ -20,10 +21,12 @@ function App() {
     <>
       <BrowserRouter>
         <Navbar />
-        <Navigation />
-        <Route path="/" exact={true} component={Home} />
-        <Route path="/video/:id" component={VideoDetail} />
-        <Route path="/search" component={Search} />
+        <div className="body-container">
+          <Navigation />
+          <Route path="/" exact={true} component={Home} />
+          <Route path="/video/:id" component={VideoDetail} />
+          <Route path="/search" component={Search} />
+        </div>
       </BrowserRouter>
     </>
   );
