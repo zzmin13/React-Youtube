@@ -1,5 +1,5 @@
 import React from "react";
-import { HashRouter, Route } from "react-router-dom";
+import { BrowserRouter, Route } from "react-router-dom";
 import "./app.css";
 import "./css/navbar.css";
 import "./css/videos.css";
@@ -11,18 +11,20 @@ import Home from "./routes/home";
 import Navigation from "./components/navigation";
 import VideoDetail from "./routes/videoDetail";
 import Navbar from "./components/navbar";
+import Search from "./routes/search";
 dotenv.config();
 
 function App() {
   console.log(`app`);
   return (
     <>
-      <HashRouter>
+      <BrowserRouter>
         <Navbar />
         <Navigation />
         <Route path="/" exact={true} component={Home} />
         <Route path="/video/:id" component={VideoDetail} />
-      </HashRouter>
+        <Route path="/search" component={Search} />
+      </BrowserRouter>
     </>
   );
 }

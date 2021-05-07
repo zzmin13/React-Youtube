@@ -1,4 +1,19 @@
 .navbar {
   background-color: aquamarine;
   display: flex;
+  height: 8vh;
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
+}
+.navbar-logo {
+  font-size: 2rem;
+  margin-right: 5px;
+}
+.navbar-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+.navbar-form {
+  align-self: center;
 }

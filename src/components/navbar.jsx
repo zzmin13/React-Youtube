@@ -1,16 +1,22 @@
-import React, { memo } from "react";
+import React, { memo, useRef } from "react";
 import { Link } from "react-router-dom";
 
 const Navbar = memo((props) => {
   console.log(`navbar`);
+  const inputRef = useRef();
   return (
     <div className="navbar">
       <Link to="/">
-        <i className="fab fa-youtube"></i>
+        <i style={{ color: "red" }} className="fab fa-youtube navbar-logo"></i>
       </Link>
-      <span>Youtube</span>
-      <form>
-        <input type="text" placeholder="검색"></input>
+      <span className="navbar-title">YouTube</span>
+      <form action={`/search`} method="get" className="navbar-form">
+        <input
+          type="text"
+          placeholder="검색"
+          ref={inputRef}
+          name="word"
+        ></input>
         <button type="submit">
           <i className="fas fa-search"></i>
         </button>

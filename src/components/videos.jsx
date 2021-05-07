@@ -4,6 +4,7 @@ import Video from "./video";
 const Videos = memo((props) => {
   const { videos } = props;
   console.log(`videos`);
+  console.log(videos);
   return (
     <>
       {videos.map((video, index, videos) => {
@@ -17,7 +18,7 @@ const Videos = memo((props) => {
               thumbnails={video.snippet.thumbnails.maxres}
             />
           );
-        } else {
+        } else if (video.snippet.thumbnails.standard) {
           return (
             <Video
               key={video.id}
@@ -25,6 +26,16 @@ const Videos = memo((props) => {
               videos={videos}
               snippet={video.snippet}
               thumbnails={video.snippet.thumbnails.standard}
+            />
+          );
+        } else if (video.snippet.thumbnails.high) {
+          return (
+            <Video
+              key={video.id.videoId}
+              id={video.id.videoId}
+              videos={videos}
+              snippet={video.snippet}
+              thumbnails={video.snippet.thumbnails.high}
             />
           );
         }

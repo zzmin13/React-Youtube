@@ -12,7 +12,7 @@ function Home() {
   const getVideos = async () => {
     try {
       const response = await axios.get(
-        `https://youtube.googleapis.com/youtube/v3/videos?part=snippet&chart=mostPopular&maxResults=30&regionCode=KR&key=${API_KEY}`
+        `https://youtube.googleapis.com/youtube/v3/videos?part=snippet&chart=mostPopular&maxResults=25&regionCode=KR&key=${API_KEY}`
       );
       setVideos((videos) => response.data.items);
       setIsLoading(false);
