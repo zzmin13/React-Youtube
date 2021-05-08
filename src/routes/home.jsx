@@ -32,9 +32,14 @@ function Home() {
       {isLoading ? (
         <LoadingImage />
       ) : (
-        <div className="home-videos-container">
-          <Videos videos={videos} />
-        </div>
+        <>
+          <div>
+            <span>인기 급상승 동영상</span>
+            <div className="home-videos-container">
+              <Videos videos={videos} />
+            </div>
+          </div>
+        </>
       )}
     </>
   );

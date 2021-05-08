@@ -15,6 +15,10 @@ import Navigation from "./components/navigation";
 import VideoDetail from "./routes/videoDetail";
 import Navbar from "./components/navbar";
 import Search from "./routes/search";
+import Sport from "./routes/sport";
+import Education from "./routes/education";
+import News from "./routes/news";
+import Comedy from "./routes/comedy";
 dotenv.config();
 
 function App() {
@@ -26,6 +30,10 @@ function App() {
         <div className="body-container">
           <Navigation />
           <Route path="/" exact={true} component={Home} />
+          <Route path="/popular/sport" component={Sport} />
+          <Route path="/popular/education" component={Education} />
+          <Route path="/popular/news" component={News} />
+          <Route path="/popular/comedy" component={Comedy} />
           <Route path="/video/:id" component={VideoDetail} />
           <Route path="/search" component={Search} />
         </div>
