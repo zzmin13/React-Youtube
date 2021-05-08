@@ -13,9 +13,11 @@ const VideoDetail = memo((props) => {
     }
     setIsActive(false);
   }, [location.state]);
+
   const handleClickMoreBtn = () => {
     setIsActive(!isActive);
   };
+
   if (location.state) {
     const { id, title, description, videos } = location.state;
     console.log(`videoDetail : ${id}`);
@@ -41,9 +43,13 @@ const VideoDetail = memo((props) => {
             >
               {description}
             </pre>
-            <div className="moreBtn" ref={moreBtn} onClick={handleClickMoreBtn}>
+            <span
+              className="moreBtn"
+              ref={moreBtn}
+              onClick={handleClickMoreBtn}
+            >
               {isActive ? `간략히` : `더보기`}
-            </div>
+            </span>
           </div>
         </div>
         <div className="videoDetail-videos">

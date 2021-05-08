@@ -1,6 +1,6 @@
 .videoDetail {
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   padding-top: 20px;
 }
 .videoDetail-videoBox {
@@ -45,6 +45,12 @@
 }
 
 .moreBtn {
-  color: red;
+  margin-top: 10px;
+  color: gray;
+  cursor: pointer;
+  font-size: 0.9rem;
+  width: fit-content;
+}
+.moreBtn:hover {
   cursor: pointer;
 }

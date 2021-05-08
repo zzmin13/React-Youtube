@@ -3,6 +3,7 @@ import "@fortawesome/fontawesome-free/js/all.js";
 import axios from "axios";
 import dotenv from "dotenv";
 import Videos from "../components/videos";
+import LoadingImage from "../components/loadingImage";
 dotenv.config();
 
 function Home() {
@@ -29,10 +30,7 @@ function Home() {
   return (
     <>
       {isLoading ? (
-        <div className="loading-box">
-          <img src="https://i.imgur.com/bBILr5g.gif" alt="loading" />
-          <h1>Loading...</h1>
-        </div>
+        <LoadingImage />
       ) : (
         <div className="home-videos-container">
           <Videos videos={videos} />

@@ -6,6 +6,8 @@ import "./css/navigation.css";
 import "./css/home.css";
 import "./css/video.css";
 import "./css/videoDetail.css";
+import "./css/search.css";
+import "./css/loadingImage.css";
 import "@fortawesome/fontawesome-free/js/all.js";
 import dotenv from "dotenv";
 import Home from "./routes/home";

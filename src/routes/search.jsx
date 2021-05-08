@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import dotenv from "dotenv";
 import axios from "axios";
 import Videos from "../components/videos";
+import LoadingImage from "../components/loadingImage";
 dotenv.config();
 
 const Search = (props) => {
@@ -30,16 +31,19 @@ const Search = (props) => {
   console.log(`search : ${terms}`);
 
   return (
-    <>
-      <h1>{terms} 에 대한 검색 결과</h1>
+    <div className="search-container">
+      <span className="search-text">
+        <span style={{ color: "red", fontWeight: "600" }}>{terms}</span>에 대한
+        검색 결과
+      </span>
       {isLoading ? (
-        <h1>검색중...</h1>
+        <LoadingImage />
       ) : (
         <div className="home-videos-container">
           <Videos videos={results} />
         </div>
       )}
-    </>
+    </div>
   );
 };
 
