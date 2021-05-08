@@ -24,6 +24,28 @@
   padding-bottom: 20px;
   border-bottom: 1px solid gray;
 }
+.videoDetail-info-channel {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+}
+.videoDetail-info-channel-profileImage {
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+}
+.videoDetail-info-channel-text {
+  margin-left: 15px;
+}
+.videoDetail-info-channel-text-title {
+  margin-bottom: 5px;
+  font-size: 0.9rem;
+  font-weight: 540;
+}
+.videoDetail-info-channel-text-subscribe {
+  font-size: 0.8rem;
+  color: gray;
+}
 .videoDetail-info-description {
   width: 100%;
   margin-top: 10px;
@@ -43,9 +65,8 @@
   width: 25%;
   height: 100vh;
 }
-
 .moreBtn {
-  margin-top: 10px;
+  margin-top: 15px;
   color: gray;
   cursor: pointer;
   font-size: 0.9rem;

@@ -5,7 +5,7 @@ const Video = memo((props) => {
   const {
     id,
     videos,
-    snippet: { title, description },
+    snippet: { title, description, channelTitle },
     thumbnails,
   } = props;
   const imgURL = thumbnails.url;
@@ -20,6 +20,7 @@ const Video = memo((props) => {
           description,
           thumbnails,
           videos,
+          channelTitle,
         },
       }}
     >
@@ -28,6 +29,7 @@ const Video = memo((props) => {
           <img src={imgURL} alt={title} className="video-thumbnail-img" />
         </div>
         <h1 className="video-title">{title}</h1>
+        <h6>{channelTitle}</h6>
       </div>
     </Link>
   );

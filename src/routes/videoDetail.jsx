@@ -19,7 +19,7 @@ const VideoDetail = memo((props) => {
   };
 
   if (location.state) {
-    const { id, title, description, videos } = location.state;
+    const { id, title, description, channelTitle, videos } = location.state;
     console.log(`videoDetail : ${id}`);
     return (
       <div className="videoDetail">
@@ -34,6 +34,21 @@ const VideoDetail = memo((props) => {
           ></iframe>
           <div className="videoDetail-info">
             <div className="videoDetail-info-title">{title}</div>
+            <div className="videoDetail-info-channel">
+              <img
+                className="videoDetail-info-channel-profileImage"
+                src="https://i.imgur.com/bqCsyXb.jpg"
+                alt="temp-profile"
+              />
+              <div className="videoDetail-info-channel-text">
+                <div className="videoDetail-info-channel-text-title">
+                  {channelTitle}
+                </div>
+                <div className="videoDetail-info-channel-text-subscribe">
+                  구독자 n 명
+                </div>
+              </div>
+            </div>
             <pre
               className={
                 "videoDetail-info-description " +
