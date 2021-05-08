@@ -1,8 +1,12 @@
-import React, { memo } from "react";
+import React, { memo, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
-const Navigation = memo(() => {
+const Navigation = memo((props) => {
   console.log(`navigation`);
+  // console.log(document.location);
+  // const initialPage = document.location.href;
+  // const [current, setCurrent] = useState(initialPage);
+
   return (
     <ul className="navigation">
       <li>

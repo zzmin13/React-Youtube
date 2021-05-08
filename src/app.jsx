@@ -3,7 +3,7 @@ import { BrowserRouter, Route } from "react-router-dom";
 import "./app.css";
 import "./css/navbar.css";
 import "./css/navigation.css";
-import "./css/videos.css";
+import "./css/home.css";
 import "./css/video.css";
 import "./css/videoDetail.css";
 import "@fortawesome/fontawesome-free/js/all.js";

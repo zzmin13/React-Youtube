@@ -29,11 +29,9 @@ function Home() {
   return (
     <>
       {isLoading ? (
-        <div
-          style={{ width: "100%", height: "1000px", backgroundColor: "blue" }}
-        >
+        <div className="loading-box">
+          <img src="https://i.imgur.com/bBILr5g.gif" alt="loading" />
           <h1>Loading...</h1>
-          <div>완전 큰 박스</div>
         </div>
       ) : (
         <div className="home-videos-container">
