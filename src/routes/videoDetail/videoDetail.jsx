@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState, memo } from "react";
 import Videos from "../../components/videos/videos";
 import styles from "./videoDetail.module.css";
 import classNames from "classnames/bind";
+import PlayList from "../../components/play-list/playlist";
 
 const cx = classNames.bind(styles);
 
@@ -69,9 +70,7 @@ const VideoDetail = memo((props) => {
             </span>
           </div>
         </div>
-        <ul className={styles.videos}>
-          <Videos videos={videos} />
-        </ul>
+        <PlayList videos={videos} />
       </div>
     );
   } else {

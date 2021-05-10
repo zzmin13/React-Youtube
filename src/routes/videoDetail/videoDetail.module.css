@@ -2,6 +2,7 @@
   display: flex;
   width: 100%;
   padding-top: 20px;
+  padding-left: 40px;
 }
 .videoDetail {
   width: 50%;
@@ -73,9 +74,4 @@
 }
 .moreBtn:hover {
   cursor: pointer;
-}
-.videos {
-  display: flex;
-  flex-direction: column;
-  width: 50%;
 }
