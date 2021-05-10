@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 import dotenv from "dotenv";
 import axios from "axios";
-import Videos from "../components/videos";
-import LoadingImage from "../components/loadingImage";
+import LoadingImage from "../../components/loadingImage/loadingImage";
+import Videos from "../../components/videos/videos";
+
 dotenv.config();
 
 const Search = (props) => {

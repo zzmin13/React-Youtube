@@ -1,24 +1,18 @@
 import React from "react";
 import { BrowserRouter, Route } from "react-router-dom";
 import "./app.css";
-import "./css/navbar.css";
-import "./css/navigation.css";
-import "./css/home.css";
-import "./css/video.css";
-import "./css/videoDetail.css";
-import "./css/search.css";
-import "./css/loadingImage.css";
 import "@fortawesome/fontawesome-free/js/all.js";
 import dotenv from "dotenv";
-import Home from "./routes/home";
-import Navigation from "./components/navigation";
-import VideoDetail from "./routes/videoDetail";
-import Navbar from "./components/navbar";
-import Search from "./routes/search";
-import Sport from "./routes/sport";
-import Education from "./routes/education";
-import News from "./routes/news";
-import Comedy from "./routes/comedy";
+import Navbar from "./components/navbar/navbar";
+import Navigation from "./components/navigation/navigation";
+import Home from "./routes/home/home";
+import Education from "./routes/education/education";
+import Sport from "./routes/sport/sport";
+import News from "./routes/news/news";
+import Comedy from "./routes/comedy/comedy";
+import VideoDetail from "./routes/videoDetail/videoDetail";
+import Search from "./routes/search/search";
+
 dotenv.config();
 
 function App() {

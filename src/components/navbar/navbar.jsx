@@ -1,5 +1,6 @@
 import React, { memo, useRef } from "react";
 import { Link } from "react-router-dom";
+import "./navbar.css";
 
 const Navbar = memo((props) => {
   console.log(`navbar`);

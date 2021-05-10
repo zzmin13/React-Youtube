@@ -2,8 +2,9 @@ import React, { useEffect, useState } from "react";
 import "@fortawesome/fontawesome-free/js/all.js";
 import axios from "axios";
 import dotenv from "dotenv";
-import Videos from "../components/videos";
-import LoadingImage from "../components/loadingImage";
+import Videos from "../../components/videos/videos";
+import LoadingImage from "../../components/loadingImage/loadingImage";
+import styles from "./home.module.css";
 dotenv.config();
 
 function Home() {
@@ -34,10 +35,10 @@ function Home() {
       ) : (
         <>
           <div>
-            <span>인기 급상승 동영상</span>
-            <div className="home-videos-container">
+            <p style={{ marginBottom: "10px" }}>인기 급상승 동영상</p>
+            <ul className={styles.container}>
               <Videos videos={videos} />
-            </div>
+            </ul>
           </div>
         </>
       )}

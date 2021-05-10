@@ -1,12 +1,10 @@
 import React, { memo, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-
+import "./navigation.css";
 const Navigation = memo((props) => {
   console.log(`navigation`);
-// game: videoCategoryId : 20
-// music : 10
-
-
+  // game: videoCategoryId : 20
+  // music : 10
   return (
     <ul className="navigation">
       <li>

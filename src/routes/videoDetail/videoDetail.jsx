@@ -1,5 +1,9 @@
 import React, { useEffect, useRef, useState, memo } from "react";
-import Videos from "../components/videos";
+import Videos from "../../components/videos/videos";
+import styles from "./videoDetail.module.css";
+import classNames from "classnames/bind";
+
+const cx = classNames.bind(styles);
 
 const VideoDetail = memo((props) => {
   const [isActive, setIsActive] = useState(false);
@@ -16,50 +20,47 @@ const VideoDetail = memo((props) => {
 
   const handleClickMoreBtn = () => {
     setIsActive(!isActive);
+    console.log(videoDescription.current.className);
   };
 
   if (location.state) {
     const { id, title, description, channelTitle, videos } = location.state;
     console.log(`videoDetail : ${id}`);
     return (
-      <div className="videoDetail">
-        <div className="videoDetail-videoBox">
+      <div className={styles.container}>
+        <div className={styles.videoDetail}>
           <iframe
-            className="videoDetail-video"
+            className={styles.video}
             src={`https://www.youtube.com/embed/${id}?autoplay=1`}
             title="YouTube video player"
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
           ></iframe>
-          <div className="videoDetail-info">
-            <div className="videoDetail-info-title">{title}</div>
-            <div className="videoDetail-info-channel">
+          <div className={styles.metadata}>
+            <div className={styles.title}>{title}</div>
+            <div className={styles.channel}>
               <img
-                className="videoDetail-info-channel-profileImage"
+                className={styles.channel_image}
                 src="https://i.imgur.com/bqCsyXb.jpg"
                 alt="temp-profile"
               />
-              <div className="videoDetail-info-channel-text">
-                <div className="videoDetail-info-channel-text-title">
-                  {channelTitle}
-                </div>
-                <div className="videoDetail-info-channel-text-subscribe">
-                  구독자 n 명
-                </div>
+              <div className={styles.channel_text}>
+                <div className={styles.channel_title}>{channelTitle}</div>
+                <div className={styles.channel_subscribers}>구독자 n 명</div>
               </div>
             </div>
             <pre
-              className={
-                "videoDetail-info-description " +
-                (isActive ? `active` : `inactive`)
-              }
+              className={cx(
+                "description",
+                isActive ? { actived: true } : { inactived: true }
+              )}
               ref={videoDescription}
             >
               {description}
             </pre>
             <span
-              className="moreBtn"
+              className={styles.morebutton}
               ref={moreBtn}
               onClick={handleClickMoreBtn}
             >
@@ -67,9 +68,9 @@ const VideoDetail = memo((props) => {
             </span>
           </div>
         </div>
-        <div className="videoDetail-videos">
+        <ul className={styles.videos}>
           <Videos videos={videos} />
-        </div>
+        </ul>
       </div>
     );
   } else {

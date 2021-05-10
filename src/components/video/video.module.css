@@ -1,19 +1,23 @@
-.video {
+.container {
   display: flex;
   flex-direction: column;
-  width: 100%;
+  width: 25%;
   height: 100%;
+  transition: transform 0.25s ease-in;
+  /* border: 1px solid red; */
+  padding: 0.4em;
+  cursor: pointer;
 }
-.video:hover {
-  transform: sacle(1.25);
+.container:hover {
+  transform: scale(1.06);
 }
-.video-thumbnail-box {
+.thumbnail {
   width: 100%;
   height: 70%;
   margin-bottom: 10px;
   position: relative;
 }
-.video-thumbnail-img {
+.image {
   width: 100%;
   height: 100%;
 }
@@ -37,12 +41,18 @@
   font-size: 1.3rem;
   margin-bottom: 10px;
 }
-.video-title {
+.title {
+  margin-top: 12px;
   font-size: 0.86rem;
   overflow-y: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
-  /* background-color: yellow; */
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
+}
+.channel {
+  margin-top: 8px;
+  color: gray;
+  font-size: 0.86rem;
+  margin-bottom: 5px;
 }

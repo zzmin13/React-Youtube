@@ -1,22 +1,22 @@
-.videoDetail {
+.container {
   display: flex;
-  justify-content: space-evenly;
+  width: 100%;
   padding-top: 20px;
 }
-.videoDetail-videoBox {
+.videoDetail {
   width: 50%;
   height: 100vh;
   margin-right: 25px;
 }
-.videoDetail-video {
+.video {
   width: 100%;
   height: 56%;
 }
-.videoDetail-info {
+.metadata {
   display: flex;
   flex-direction: column;
 }
-.videoDetail-info-title {
+.title {
   width: 100%;
   margin-top: 20px;
   margin-bottom: 10px;
@@ -24,54 +24,58 @@
   padding-bottom: 20px;
   border-bottom: 1px solid gray;
 }
-.videoDetail-info-channel {
+.channel {
   margin-top: 10px;
+  margin-bottom: 10px;
   display: flex;
   align-items: center;
 }
-.videoDetail-info-channel-profileImage {
+.channel_image {
   width: 50px;
   height: 50px;
   border-radius: 50px;
 }
-.videoDetail-info-channel-text {
+.channel_text {
   margin-left: 15px;
 }
-.videoDetail-info-channel-text-title {
+.channel_title {
   margin-bottom: 5px;
   font-size: 0.9rem;
   font-weight: 540;
 }
-.videoDetail-info-channel-text-subscribe {
+.channel_subscribers {
   font-size: 0.8rem;
   color: gray;
 }
-.videoDetail-info-description {
+.actived {
   width: 100%;
   margin-top: 10px;
   white-space: pre-wrap;
   font-size: 0.9rem;
   line-height: 20px;
 }
-.inactive {
+
+.inactived {
   overflow: hidden;
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
+  font-size: 0.9rem;
+  line-height: 20px;
 }
-.videoDetail-videos {
-  display: flex;
-  flex-direction: column;
-  width: 25%;
-  height: 100vh;
-}
-.moreBtn {
+
+.morebutton {
   margin-top: 15px;
   color: gray;
   cursor: pointer;
   font-size: 0.9rem;
   width: fit-content;
 }
-.moreBtn:hover {
+.morebutton:hover {
   cursor: pointer;
+}
+.videos {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
 }
