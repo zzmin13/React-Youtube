@@ -4,6 +4,9 @@
   width: 100%;
   height: 100%;
 }
+.video:hover {
+  transform: sacle(1.25);
+}
 .video-thumbnail-box {
   width: 100%;
   height: 70%;
@@ -14,7 +17,8 @@
   width: 100%;
   height: 100%;
 }
-.video-thumbnail-hoverBox {
+.actived {
+  display: flex;
   position: absolute;
   top: 0;
   left: 0;
@@ -22,10 +26,12 @@
   color: white;
   width: 100%;
   height: 100%;
-  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+.inactived {
+  display: none;
 }
 .playIcon {
   font-size: 1.3rem;

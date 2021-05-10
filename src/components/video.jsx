@@ -1,10 +1,7 @@
-import React, { memo } from "react";
+import React, { memo, useRef } from "react";
 import { Link } from "react-router-dom";
 
 const Video = memo((props) => {
-  const displayVisible = {
-    display: "",
-  };
   const {
     id,
     videos,
@@ -12,6 +9,13 @@ const Video = memo((props) => {
     thumbnails,
   } = props;
   const imgURL = thumbnails.url;
+  const hoverBox = useRef();
+  const handleMouseEnter = () => {
+    hoverBox.current.className = "video-thumbnail-hoverBox actived";
+  };
+  const handleMouseLeave = () => {
+    hoverBox.current.className = "video-thumbnail-hoverBox inactived";
+  };
   console.log(`video : ${id}`);
   return (
     <Link
@@ -26,11 +30,13 @@ const Video = memo((props) => {
           channelTitle,
         },
       }}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
     >
       <div className="video">
         <div className="video-thumbnail-box">
           <img src={imgURL} alt={title} className="video-thumbnail-img" />
-          <div style={{ display: "" }} className="video-thumbnail-hoverBox">
+          <div ref={hoverBox} className="video-thumbnail-hoverBox inactived">
             <i class="far fa-play-circle playIcon"></i>
             <span>지금 재생</span>
           </div>

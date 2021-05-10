@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 
 const Navigation = memo((props) => {
   console.log(`navigation`);
-  // console.log(document.location);
-  // const initialPage = document.location.href;
-  // const [current, setCurrent] = useState(initialPage);
+// game: videoCategoryId : 20
+// music : 10
+
 
   return (
     <ul className="navigation">
