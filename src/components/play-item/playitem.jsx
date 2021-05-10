@@ -5,9 +5,9 @@ import styles from "./playitem.module.css";
 const PlayItem = (props) => {
   const {
     video: {
-      id,
       snippet: { title, description, channelTitle, thumbnails },
     },
+    id,
     videos,
   } = props;
   const imgURL = thumbnails.medium.url;

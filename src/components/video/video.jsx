@@ -8,11 +8,12 @@ const cx = classNames.bind(styles);
 const Video = memo((props) => {
   const {
     video: {
-      id,
       snippet: { title, description, channelTitle, thumbnails },
     },
+    id,
     videos,
   } = props;
+
   const imgURL = thumbnails.medium.url;
   const locationHref = document.location.href;
   const hoverBox = useRef();

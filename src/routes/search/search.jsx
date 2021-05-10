@@ -3,7 +3,7 @@ import dotenv from "dotenv";
 import axios from "axios";
 import LoadingImage from "../../components/loadingImage/loadingImage";
 import Videos from "../../components/videos/videos";
-
+import "./search.css";
 dotenv.config();
 
 const Search = (props) => {
@@ -40,9 +40,9 @@ const Search = (props) => {
       {isLoading ? (
         <LoadingImage />
       ) : (
-        <div className="home-videos-container">
+        <ul className="video-container">
           <Videos videos={results} />
-        </div>
+        </ul>
       )}
     </div>
   );

@@ -6,7 +6,25 @@ const PlayList = (props) => {
   return (
     <ul className={styles.videos}>
       {videos.map((video) => {
-        return <PlayItem key={video.id} video={video} videos={videos} />;
+        if (typeof video.id === "object") {
+          return (
+            <PlayItem
+              key={video.id.videoId}
+              id={video.id.videoId}
+              video={video}
+              videos={videos}
+            />
+          );
+        } else {
+          return (
+            <PlayItem
+              key={video.id}
+              id={video.id}
+              video={video}
+              videos={videos}
+            />
+          );
+        }
       })}
     </ul>
   );
