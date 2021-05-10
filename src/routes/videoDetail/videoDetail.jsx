@@ -7,6 +7,7 @@ const cx = classNames.bind(styles);
 
 const VideoDetail = memo((props) => {
   const [isActive, setIsActive] = useState(false);
+  const visitedPage = useRef(0);
   const videoDescription = useRef();
   const [height, setHeight] = useState();
   const { location, history } = props;
@@ -16,6 +17,7 @@ const VideoDetail = memo((props) => {
     if (location.state === undefined) {
       history.push("/");
     }
+    window.scroll(0, 0);
     setIsActive(false);
   }, [location.state]);
 
@@ -23,20 +25,8 @@ const VideoDetail = memo((props) => {
     setIsActive(!isActive);
   };
   if (location.state) {
-    const {
-      id,
-      title,
-      description,
-      channelTitle,
-      videos,
-      locationHref: preHref,
-    } = location.state;
-    const currHref = document.location.href;
+    const { id, title, description, channelTitle, videos } = location.state;
     console.log(`videoDetail : ${id}`);
-    if (preHref !== currHref) {
-      window.scroll(0, 0);
-    }
-
     return (
       <div className={styles.container}>
         <div className={styles.videoDetail}>
