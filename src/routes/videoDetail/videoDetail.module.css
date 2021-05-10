@@ -64,14 +64,14 @@
   line-height: 20px;
 }
 
-.morebutton {
+.moreBtn {
   margin-top: 15px;
   color: gray;
   cursor: pointer;
   font-size: 0.9rem;
   width: fit-content;
 }
-.morebutton:hover {
+.moreBtn:hover {
   cursor: pointer;
 }
 .videos {

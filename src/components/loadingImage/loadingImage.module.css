@@ -1,4 +1,4 @@
-.loading-box {
+.box {
   width: 100%;
   height: 100vh;
   display: flex;
@@ -6,11 +6,11 @@
   justify-content: center;
   align-items: center;
 }
-.loading-box img {
+.image {
   width: 25px;
   height: 25px;
   margin-bottom: 10px;
 }
-.loading-box h1 {
+.text {
   color: black;
 }

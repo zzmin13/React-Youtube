@@ -8,6 +8,7 @@ const cx = classNames.bind(styles);
 const VideoDetail = memo((props) => {
   const [isActive, setIsActive] = useState(false);
   const videoDescription = useRef();
+  const [height, setHeight] = useState();
   const { location, history } = props;
   const moreBtn = useRef();
 
@@ -20,12 +21,22 @@ const VideoDetail = memo((props) => {
 
   const handleClickMoreBtn = () => {
     setIsActive(!isActive);
-    console.log(videoDescription.current.className);
   };
-
   if (location.state) {
-    const { id, title, description, channelTitle, videos } = location.state;
+    const {
+      id,
+      title,
+      description,
+      channelTitle,
+      videos,
+      locationHref: preHref,
+    } = location.state;
+    const currHref = document.location.href;
     console.log(`videoDetail : ${id}`);
+    if (preHref !== currHref) {
+      window.scroll(0, 0);
+    }
+
     return (
       <div className={styles.container}>
         <div className={styles.videoDetail}>
@@ -60,7 +71,7 @@ const VideoDetail = memo((props) => {
               {description}
             </pre>
             <span
-              className={styles.morebutton}
+              className={styles.moreBtn}
               ref={moreBtn}
               onClick={handleClickMoreBtn}
             >

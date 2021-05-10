@@ -7,7 +7,7 @@ import LoadingImage from "../../components/loadingImage/loadingImage";
 import styles from "./home.module.css";
 dotenv.config();
 
-function Home() {
+function Home(props) {
   const [videos, setVideos] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const API_KEY = process.env.REACT_APP_YOUTUBE_API_KEY;

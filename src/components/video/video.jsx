@@ -14,6 +14,7 @@ const Video = memo((props) => {
     videos,
   } = props;
   const imgURL = thumbnails.medium.url;
+  const locationHref = document.location.href;
   const hoverBox = useRef();
   const handleMouseEnter = () => {
     hoverBox.current.className = cx(
@@ -42,6 +43,7 @@ const Video = memo((props) => {
             thumbnails,
             videos,
             channelTitle,
+            locationHref,
           },
         }}
         className={styles.video}
