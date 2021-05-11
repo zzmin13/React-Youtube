@@ -1,5 +1,4 @@
 import React, { useEffect, useRef, useState, memo } from "react";
-import Videos from "../../components/videos/videos";
 import styles from "./videoDetail.module.css";
 import classNames from "classnames/bind";
 import PlayList from "../../components/play-list/playlist";
@@ -8,9 +7,7 @@ const cx = classNames.bind(styles);
 
 const VideoDetail = memo((props) => {
   const [isActive, setIsActive] = useState(false);
-  const visitedPage = useRef(0);
   const videoDescription = useRef();
-  const [height, setHeight] = useState();
   const { location, history } = props;
   const moreBtn = useRef();
 

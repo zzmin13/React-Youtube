@@ -25,7 +25,6 @@ class Youtube {
     );
     let results = response.data.items;
     results = results.map((item) => ({ ...item, id: item.id.videoId }));
-    console.log(results);
     return results;
   }
 }

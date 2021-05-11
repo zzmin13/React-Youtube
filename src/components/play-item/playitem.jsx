@@ -1,8 +1,8 @@
-import React from "react";
+import React, { memo } from "react";
 import { Link } from "react-router-dom";
 import styles from "./playitem.module.css";
 
-const PlayItem = (props) => {
+const PlayItem = memo((props) => {
   const {
     video: {
       snippet: { title, description, channelTitle, thumbnails },
@@ -38,6 +38,6 @@ const PlayItem = (props) => {
       </Link>
     </li>
   );
-};
+});
 
 export default PlayItem;

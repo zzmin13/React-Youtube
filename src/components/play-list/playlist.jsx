@@ -1,8 +1,9 @@
-import React from "react";
+import React, { memo } from "react";
 import PlayItem from "../play-item/playitem";
 import styles from "./playlist.module.css";
-const PlayList = (props) => {
+const PlayList = memo((props) => {
   const { videos } = props;
+  console.log(`playlist`);
   return (
     <ul className={styles.videos}>
       {videos.map((video) => {
@@ -28,6 +29,6 @@ const PlayList = (props) => {
       })}
     </ul>
   );
-};
+});
 
 export default PlayList;
