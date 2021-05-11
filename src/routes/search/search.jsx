@@ -1,40 +1,28 @@
 import React, { useEffect, useState } from "react";
-import dotenv from "dotenv";
-import axios from "axios";
 import LoadingImage from "../../components/loadingImage/loadingImage";
 import Videos from "../../components/videos/videos";
 import "./search.css";
-dotenv.config();
 
 const Search = (props) => {
-  const API_KEY = process.env.REACT_APP_YOUTUBE_API_KEY;
   const {
+    youtube,
     location: { search },
   } = props;
   const terms = decodeURI(decodeURIComponent(search.slice(6, search.length)));
+
   const [results, setResults] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
-  const getResults = async () => {
-    try {
-      const response = await axios.get(
-        `https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&q=${terms}&key=${API_KEY}`
-      );
-      let results = response.data.items;
-      results = results.map((item) => {
-        return { ...item, id: item.id.videoId };
-      });
-      setResults(results);
-      setIsLoading(false);
-    } catch (error) {
-      console.log(error);
-    }
+  const getResults = (terms) => {
+    youtube
+      .getSearch(terms) //
+      .then((results) => setResults(results))
+      .then(setIsLoading(false));
   };
   useEffect(() => {
-    getResults();
+    getResults(terms);
   }, []);
   console.log(`search : ${terms}`);
-
   return (
     <div className="search-container">
       <span className="search-text">

@@ -1,23 +1,17 @@
 import React, { memo, useEffect, useState } from "react";
-import axios from "axios";
 import LoadingImage from "../../components/loadingImage/loadingImage";
 import Videos from "../../components/videos/videos";
 import styles from "../home/home.module.css";
+
 // videoCategoryId : 17
-const Sport = memo((props) => {
+const Sport = memo(({ youtube }) => {
   const [videos, setVideos] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-  const API_KEY = process.env.REACT_APP_YOUTUBE_API_KEY;
-  const getVideos = async () => {
-    try {
-      const response = await axios.get(
-        `https://youtube.googleapis.com/youtube/v3/videos?part=snippet&chart=mostPopular&maxResults=25&regionCode=KR&videoCategoryId=17&key=${API_KEY}`
-      );
-      setVideos((videos) => response.data.items);
-      setIsLoading(false);
-    } catch (error) {
-      console.log(error);
-    }
+  const getVideos = () => {
+    youtube
+      .getCategoryVideos(17)
+      .then((videos) => setVideos(videos))
+      .then(setIsLoading(false));
   };
 
   useEffect(() => {

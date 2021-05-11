@@ -1,26 +1,18 @@
 import React, { useEffect, useState } from "react";
 import "@fortawesome/fontawesome-free/js/all.js";
-import axios from "axios";
-import dotenv from "dotenv";
 import Videos from "../../components/videos/videos";
 import LoadingImage from "../../components/loadingImage/loadingImage";
 import styles from "./home.module.css";
-dotenv.config();
 
-function Home(props) {
+function Home({ youtube }) {
   const [videos, setVideos] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-  const API_KEY = process.env.REACT_APP_YOUTUBE_API_KEY;
-  const getVideos = async () => {
-    try {
-      const response = await axios.get(
-        `https://youtube.googleapis.com/youtube/v3/videos?part=snippet&chart=mostPopular&maxResults=25&regionCode=KR&key=${API_KEY}`
-      );
-      setVideos((videos) => response.data.items);
-      setIsLoading(false);
-    } catch (error) {
-      console.log(error);
-    }
+
+  const getVideos = () => {
+    youtube
+      .getMostPopular()
+      .then((videos) => setVideos(videos))
+      .then(setIsLoading(false));
   };
 
   useEffect(() => {

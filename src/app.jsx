@@ -15,7 +15,7 @@ import Search from "./routes/search/search";
 
 dotenv.config();
 
-function App() {
+function App({ youtube }) {
   console.log(`app`);
   return (
     <>
@@ -23,13 +23,35 @@ function App() {
         <Navbar />
         <div className="body-container">
           <Navigation />
-          <Route path="/" exact={true} component={Home} />
-          <Route path="/popular/sport" component={Sport} />
-          <Route path="/popular/education" component={Education} />
-          <Route path="/popular/news" component={News} />
-          <Route path="/popular/comedy" component={Comedy} />
-          <Route path="/video/:id" component={VideoDetail} />
-          <Route path="/search" component={Search} />
+          <Route
+            path="/"
+            exact={true}
+            render={() => <Home youtube={youtube} />}
+          />
+          <Route
+            path="/popular/sport"
+            render={() => <Sport youtube={youtube} />}
+          />
+          <Route
+            path="/popular/education"
+            render={() => <Education youtube={youtube} />}
+          />
+          <Route
+            path="/popular/news"
+            render={() => <News youtube={youtube} />}
+          />
+          <Route
+            path="/popular/comedy"
+            render={() => <Comedy youtube={youtube} />}
+          />
+          <Route
+            path="/video/:id"
+            render={(props) => <VideoDetail youtube={youtube} {...props} />}
+          />
+          <Route
+            path="/search"
+            render={(props) => <Search youtube={youtube} {...props} />}
+          />
         </div>
       </BrowserRouter>
     </>
