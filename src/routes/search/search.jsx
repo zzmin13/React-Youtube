@@ -20,7 +20,11 @@ const Search = (props) => {
       const response = await axios.get(
         `https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&q=${terms}&key=${API_KEY}`
       );
-      setResults((results) => response.data.items);
+      let results = response.data.items;
+      results = results.map((item) => {
+        return { ...item, id: item.id.videoId };
+      });
+      setResults(results);
       setIsLoading(false);
     } catch (error) {
       console.log(error);

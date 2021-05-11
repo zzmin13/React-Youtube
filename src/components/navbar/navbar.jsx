@@ -16,7 +16,7 @@ const Navbar = memo((props) => {
       </Link>
       <form action={`/search`} method="get" className="navbar-form">
         <input
-          type="text"
+          type="search"
           placeholder="검색"
           ref={inputRef}
           name="word"
