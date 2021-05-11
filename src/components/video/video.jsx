@@ -12,11 +12,13 @@ const Video = memo((props) => {
     },
     id,
     videos,
+    display,
   } = props;
 
   const imgURL = thumbnails.medium.url;
   const locationHref = document.location.href;
   const hoverBox = useRef();
+  const displayType = display === "list" ? styles.list : styles.grid;
   const handleMouseEnter = () => {
     hoverBox.current.className = cx(
       "hoverBox",
@@ -33,7 +35,7 @@ const Video = memo((props) => {
   };
   console.log(`video : ${id}`);
   return (
-    <li className={styles.container}>
+    <li className={`${styles.container} ${displayType}`}>
       <Link
         to={{
           pathname: `/video/${id}`,

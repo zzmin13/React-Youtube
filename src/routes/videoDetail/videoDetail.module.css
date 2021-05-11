@@ -8,10 +8,13 @@
   width: 50%;
   height: 100vh;
   margin-right: 25px;
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 60%;
 }
 .video {
   width: 100%;
-  height: 56%;
+  height: 70%;
 }
 .metadata {
   display: flex;
@@ -74,4 +77,11 @@
 }
 .moreBtn:hover {
   cursor: pointer;
+}
+
+.playlist {
+  display: flex;
+  flex-wrap: wrap;
+  width: 50%;
+  flex: 1 1 40%;
 }

@@ -29,7 +29,7 @@ function Home({ youtube }) {
           <div>
             <p style={{ marginBottom: "10px" }}>인기 급상승 동영상</p>
             <ul className={styles.container}>
-              <Videos videos={videos} />
+              <Videos videos={videos} display="grid" />
             </ul>
           </div>
         </>
