@@ -1,15 +1,12 @@
 .navigation {
   position: fixed;
-  left: 0;
-  bottom: 0;
-  top: 70px;
   background-color: white;
   display: flex;
-  width: 70px;
-  flex-direction: column;
+}
+.navigation-itemBox {
+  flex: 1 1 100%;
 }
 .navigation-item {
-  padding: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -21,13 +18,48 @@
 
 /* tablet(768~1024px) */
 @media (min-width: 768px) and (max-width: 1024px) {
+  .navigation {
+    bottom: 0px;
+    height: fit-content;
+    flex-direction: row;
+    width: 100%;
+    z-index: 1;
+    justify-content: center;
+  }
+  .navigation-item {
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
 }
 /* mobile(~768px) */
 @media (max-width: 768px) {
   .navigation {
-    top: 100px;
+    bottom: 0px;
+    height: fit-content;
+    flex-direction: row;
+    width: 100%;
+    z-index: 1;
+    justify-content: center;
+  }
+  .navigation-item {
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
   }
 }
 /* pc (1025px 이상) */
 @media (min-width: 1025px) {
+  .navigation {
+    width: 70px;
+    flex-direction: column;
+    left: 0;
+    bottom: 0;
+    top: 70px;
+  }
+  .navigation-item {
+    padding: 20px;
+  }
 }
