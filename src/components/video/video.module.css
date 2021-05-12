@@ -7,18 +7,26 @@
   transform: scale(1.06);
 }
 .container.grid {
-  border: 1px solid red;
   width: 25%;
   /* height: 100%; */
 }
 .container.list {
-  border: 1px solid blue;
   width: 100%;
 }
+
+.video.list {
+  display: flex;
+}
+
 .thumbnail {
-  width: 100%;
-  margin-bottom: 10px;
   position: relative;
+  margin-bottom: 10px;
+}
+.thumbnail.list {
+  width: 50%;
+}
+.thumbnail.grid {
+  width: 100%;
 }
 .image {
   width: 100%;
@@ -43,6 +51,11 @@
 .playIcon {
   font-size: 1.3rem;
   margin-bottom: 10px;
+}
+
+.metadata.list {
+  margin-left: 10px;
+  width: 50%;
 }
 .title {
   margin-top: 12px;

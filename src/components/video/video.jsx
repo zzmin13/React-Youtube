@@ -49,11 +49,11 @@ const Video = memo((props) => {
             locationHref,
           },
         }}
-        className={styles.video}
+        className={`${styles.video} ${displayType}`}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
       >
-        <div className={styles.thumbnail}>
+        <div className={`${styles.thumbnail} ${displayType}`}>
           <img src={imgURL} alt={title} className={styles.image} />
           <div
             ref={hoverBox}
@@ -63,8 +63,10 @@ const Video = memo((props) => {
             <span>지금 재생</span>
           </div>
         </div>
-        <p className={styles.title}>{title}</p>
-        <p className={styles.channel}>{channelTitle}</p>
+        <div className={`${styles.metadata} ${displayType}`}>
+          <p className={styles.title}>{title}</p>
+          <p className={styles.channel}>{channelTitle}</p>
+        </div>
       </Link>
     </li>
   );
