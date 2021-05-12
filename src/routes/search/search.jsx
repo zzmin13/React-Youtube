@@ -6,6 +6,7 @@ import "./search.css";
 const Search = (props) => {
   const { youtube, location } = props;
   const terms = location.pathname.slice(8, location.pathname.length);
+  const [params, setParams] = useState(terms);
 
   const [results, setResults] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -18,7 +19,8 @@ const Search = (props) => {
   };
   useEffect(() => {
     getResults(terms);
-  }, []);
+  }, [location.pathname]);
+
   console.log(`search : ${terms}`);
   return (
     <div className="search-container">
