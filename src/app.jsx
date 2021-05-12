@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Route } from "react-router-dom";
+import { BrowserRouter, HashRouter, Route } from "react-router-dom";
 import "./app.css";
 import "@fortawesome/fontawesome-free/js/all.js";
 import dotenv from "dotenv";
@@ -19,7 +19,7 @@ function App({ youtube }) {
   console.log(`app`);
   return (
     <>
-      <BrowserRouter>
+      <HashRouter basename="/React-Youtube">
         <Navbar />
         <div className="body-container">
           <Navigation />
@@ -49,11 +49,11 @@ function App({ youtube }) {
             render={(props) => <VideoDetail youtube={youtube} {...props} />}
           />
           <Route
-            path="/search"
+            path="/search/:params"
             render={(props) => <Search youtube={youtube} {...props} />}
           />
         </div>
-      </BrowserRouter>
+      </HashRouter>
     </>
   );
 }

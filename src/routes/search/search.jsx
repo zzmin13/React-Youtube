@@ -4,11 +4,8 @@ import Videos from "../../components/videos/videos";
 import "./search.css";
 
 const Search = (props) => {
-  const {
-    youtube,
-    location: { search },
-  } = props;
-  const terms = decodeURI(decodeURIComponent(search.slice(6, search.length)));
+  const { youtube, location } = props;
+  const terms = location.pathname.slice(8, location.pathname.length);
 
   const [results, setResults] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
