@@ -26,7 +26,9 @@ const Sport = memo(({ youtube }) => {
       ) : (
         <>
           <div>
-            <p style={{ marginBottom: "10px" }}>스포츠 인기 동영상</p>
+            <p style={{ paddingLeft: "0.4em", marginBottom: "10px" }}>
+              스포츠 인기 동영상
+            </p>
             <ul className={styles.container}>
               <Videos videos={videos} />
             </ul>

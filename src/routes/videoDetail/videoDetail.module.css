@@ -6,7 +6,10 @@
   height: 100%;
   display: flex;
   flex-direction: column;
+  /* position: sticky;
+  top: 70px; */
 }
+
 .metadata {
   display: flex;
   flex-direction: column;
@@ -71,6 +74,7 @@
 }
 
 .playlist {
+  position: relative;
   display: flex;
   flex-wrap: wrap;
 }
@@ -89,6 +93,9 @@
     width: 100vw;
     height: 56vw;
     margin: 0 auto;
+    position: sticky;
+    top: 70px;
+    z-index: 1;
   }
   .metadata {
     padding-left: 10px;
@@ -113,6 +120,9 @@
     width: 100vw;
     height: 56vw;
     margin: 0 auto;
+    position: sticky;
+    top: 70px;
+    z-index: 1;
   }
   .metadata {
     padding-left: 10px;
